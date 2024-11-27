@@ -1,10 +1,10 @@
 === Minify HTML ===
 Contributors: teckel
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=99J6Y4WCHCUN4&lc=US&item_name=Minify%20HTML&item_number=Minify%20HTML%20Plugin&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: minify, minifer, minification, HTML, fast, faster, speed, performance, optimize, optimization, downloading, beautify, beautifier, sloppy, clean, cleaner, markup, compress, css, javascript
-Requires at least: 2.0.3
-Tested up to: 6.3
-Stable tag: 2.1.9
+Tags: minify, minifier, beautify, compress, HTML
+Requires at least: 3.6.0
+Tested up to: 6.7.1
+Stable tag: 2.1.10
 Requires PHP: 5.2.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -78,6 +78,9 @@ With Minify HTML, the source HTML file will be smaller, therefore, it will compr
 
 
 == Changelog ==
+
+= v2.1.10 - 11/27/2024 =
+* Resolve issue with block editor converting to classic block and possible edge-case issues with preg_replace() function.
 
 = v2.1.9 - 9/20/2023 =
 * Resolve line break issues with inline javascript comments.
