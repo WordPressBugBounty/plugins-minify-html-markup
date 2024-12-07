@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=99J6Y
 Tags: minify, minifier, beautify, compress, HTML
 Requires at least: 3.6.0
 Tested up to: 6.7.1
-Stable tag: 2.1.10
+Stable tag: 2.1.11
 Requires PHP: 5.2.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -78,6 +78,9 @@ With Minify HTML, the source HTML file will be smaller, therefore, it will compr
 
 
 == Changelog ==
+
+= v2.1.11 - 12/06/2024 =
+* Resolve issue unique to an over-zealous "bug" bounty with too much time on their hands.
 
 = v2.1.10 - 11/27/2024 =
 * Resolve issue with block editor converting to classic block and possible edge-case issues with preg_replace() function.

@@ -3,7 +3,7 @@
 Plugin Name: Minify HTML
 Plugin URI: https://www.wordpress.org/plugins/minify-html-markup/
 Description: Minify your HTML for faster downloading and cleaning up sloppy looking markup.
-Version: 2.1.10
+Version: 2.1.11
 Author: Tim Eckel
 Author URI: https://www.dogblocker.com
 License: GPLv3 or later
@@ -92,7 +92,7 @@ function teckel_minify_html_output($buffer) {
 		}
 		$process = preg_replace(array ('/\>[^\S ]+' . $mod, '/[^\S ]+\<' . $mod, '/(\s)+' . $mod, '/"\n>' . $mod, '/"\n' . $mod), array('>', '<', '\\1', '">', '" '), $process, 100000);
 		if ( $minify_html_comments != 'no' ) {
-			$process = preg_replace('/<!--(?!\s*(?:\[if [^\]]+]|<!|>))(?:(?!-->).)*-->' . $mod, '', $process, 1000);
+			$process = preg_replace('/(?=<!--)([\s\S]*?)-->' . $mod, '', $process, 100000);
 		}
 		$buffer .= $process.$asis;
 	}
