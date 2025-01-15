@@ -3,7 +3,7 @@
 Plugin Name: Minify HTML
 Plugin URI: https://www.wordpress.org/plugins/minify-html-markup/
 Description: Minify your HTML for faster downloading and cleaning up sloppy looking markup.
-Version: 2.1.11
+Version: 2.1.12
 Author: Tim Eckel
 Author URI: https://www.dogblocker.com
 License: GPLv3 or later
@@ -12,7 +12,7 @@ Text Domain: minify-html-markup
 */
 
 /*
-	Copyright 2024  Tim Eckel  (email : eckel.tim@gmail.com)
+	Copyright 2025  Tim Eckel  (email : eckel.tim@gmail.com)
 
 	Minify HTML is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -140,13 +140,13 @@ function minify_html_menu_options() {
 		if ( isset( $_POST['minify_html_nonce'] ) && !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['minify_html_nonce'] ) ), 'minify-html-nonce' ) ) {
 			wp_die( esc_html( 'Form failed nonce verification.' ) );
 		}
-		if ( isset( $_POST[ 'minify_html_active' ] ) ) $minify_html_active = filter_var ( wp_unslash( $_POST[ 'minify_html_active' ] ), FILTER_SANITIZE_STRING ); else $minify_html_active = 'yes';
-		if ( isset( $_POST[ 'minify_javascript' ] ) ) $minify_javascript = filter_var ( wp_unslash( $_POST[ 'minify_javascript' ] ), FILTER_SANITIZE_STRING ); else $minify_javascript = 'yes';
-		if ( isset( $_POST[ 'minify_html_comments' ] ) ) $minify_html_comments = filter_var ( wp_unslash( $_POST[ 'minify_html_comments' ] ), FILTER_SANITIZE_STRING ); else $minify_html_comments = 'yes';
-		if ( isset( $_POST[ 'minify_html_xhtml' ] ) ) $minify_html_xhtml = filter_var ( wp_unslash( $_POST[ 'minify_html_xhtml' ] ), FILTER_SANITIZE_STRING ); else $minify_html_xhtml = 'no';
-		if ( isset( $_POST[ 'minify_html_relative' ] ) ) $minify_html_relative = filter_var ( wp_unslash( $_POST[ 'minify_html_relative' ] ), FILTER_SANITIZE_STRING ); else $minify_html_relative = 'no';
-		if ( isset( $_POST[ 'minify_html_scheme' ] ) ) $minify_html_scheme = filter_var ( wp_unslash( $_POST[ 'minify_html_scheme' ] ), FILTER_SANITIZE_STRING ); else $minify_html_scheme = 'no';
-		if ( isset( $_POST[ 'minify_html_utf8' ] ) ) $minify_html_utf8 = filter_var ( wp_unslash( $_POST[ 'minify_html_utf8' ] ), FILTER_SANITIZE_STRING ); else $minify_html_utf8 = 'no';
+		if ( isset( $_POST[ 'minify_html_active' ] ) ) $minify_html_active = filter_var ( wp_unslash( $_POST[ 'minify_html_active' ] ), FILTER_SANITIZE_FULL_SPECIAL_CHARS ); else $minify_html_active = 'yes';
+		if ( isset( $_POST[ 'minify_javascript' ] ) ) $minify_javascript = filter_var ( wp_unslash( $_POST[ 'minify_javascript' ] ), FILTER_SANITIZE_FULL_SPECIAL_CHARS ); else $minify_javascript = 'yes';
+		if ( isset( $_POST[ 'minify_html_comments' ] ) ) $minify_html_comments = filter_var ( wp_unslash( $_POST[ 'minify_html_comments' ] ), FILTER_SANITIZE_FULL_SPECIAL_CHARS ); else $minify_html_comments = 'yes';
+		if ( isset( $_POST[ 'minify_html_xhtml' ] ) ) $minify_html_xhtml = filter_var ( wp_unslash( $_POST[ 'minify_html_xhtml' ] ), FILTER_SANITIZE_FULL_SPECIAL_CHARS ); else $minify_html_xhtml = 'no';
+		if ( isset( $_POST[ 'minify_html_relative' ] ) ) $minify_html_relative = filter_var ( wp_unslash( $_POST[ 'minify_html_relative' ] ), FILTER_SANITIZE_FULL_SPECIAL_CHARS ); else $minify_html_relative = 'no';
+		if ( isset( $_POST[ 'minify_html_scheme' ] ) ) $minify_html_scheme = filter_var ( wp_unslash( $_POST[ 'minify_html_scheme' ] ), FILTER_SANITIZE_FULL_SPECIAL_CHARS ); else $minify_html_scheme = 'no';
+		if ( isset( $_POST[ 'minify_html_utf8' ] ) ) $minify_html_utf8 = filter_var ( wp_unslash( $_POST[ 'minify_html_utf8' ] ), FILTER_SANITIZE_FULL_SPECIAL_CHARS ); else $minify_html_utf8 = 'no';
 		update_option( 'minify_html_active', $minify_html_active );
 		update_option( 'minify_javascript', $minify_javascript );
 		update_option( 'minify_html_comments', $minify_html_comments );
